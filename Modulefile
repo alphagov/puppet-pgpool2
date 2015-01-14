@@ -1,0 +1,10 @@
+name          'puppet-pgpool2'
+version       '0.0.1'
+source        'https://github.com/alphagov/puppet-pgpool2'
+author        'Government Digital Service'
+license       'MIT'
+summary       'Module to install and configure pgpool-II'
+description   ''
+project_page  'https://github.com/alphagov/puppet-pgpool2'
+
+dependency 'puppetlabs/stdlib', '>= 3.0.0'
