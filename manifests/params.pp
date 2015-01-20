@@ -9,10 +9,6 @@ class pgpool2::params {
       $package_name = 'pgpool2'
       $service_name = 'pgpool2'
     }
-    'RedHat', 'Amazon': {
-      $package_name = 'pgpool2'
-      $service_name = 'pgpool2'
-    }
     default: {
       fail("${::operatingsystem} not supported")
     }

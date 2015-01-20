@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'pgpool2' do
   context 'supported operating systems' do
-    ['Debian', 'RedHat'].each do |osfamily|
+    ['Debian'].each do |osfamily|
       describe "pgpool2 class without any parameters on #{osfamily}" do
         let(:params) {{ }}
         let(:facts) {{
