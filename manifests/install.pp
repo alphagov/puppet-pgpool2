@@ -15,4 +15,12 @@ class pgpool2::install {
     notify  => Service[$pgpool2::params::service_name],
     require => Package[$pgpool2::params::package_name],
   }
+  file { '/etc/pgpool2/pool_passwd':
+    ensure  => present,
+    owner   => 'postgres',
+    group   => 'postgres',
+    mode    => '0644',
+    notify  => Service[$pgpool2::params::service_name],
+    require => Package[$pgpool2::params::package_name],
+  }
 }

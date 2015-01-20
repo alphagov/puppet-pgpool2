@@ -15,5 +15,12 @@ describe 'pgpool2::install' do
            'mode'    => '0755',
     )
     }
+    it { should contain_file('/etc/pgpool2/pool_passwd').with(
+           'ensure'  => 'present',
+           'owner'   => 'postgres',
+           'group'   => 'postgres',
+           'mode'    => '0644',
+    )
+    }
   end
 end
