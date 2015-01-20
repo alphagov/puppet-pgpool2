@@ -6,4 +6,13 @@ class pgpool2::install {
   package { $pgpool2::params::package_name:
     ensure => present,
   }
+
+  file { '/var/run/postgresql':
+    ensure  => directory,
+    owner   => 'postgres',
+    group   => 'postgres',
+    mode    => '0755',
+    notify  => Service[$pgpool2::params::service_name],
+    require => Package[$pgpool2::params::package_name],
+  }
 }
