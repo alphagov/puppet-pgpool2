@@ -8,6 +8,10 @@ describe 'pgpool2' do
         let(:facts) {{
           :osfamily => osfamily,
         }}
+        let(:hiera_data) {{
+          'pgpool2::config::backend_zero_hostname' => 'host0',
+          'pgpool2::config::backend_one_hostname' => 'host1'
+        }}          
 
         it { should contain_class('pgpool2::params') }
 

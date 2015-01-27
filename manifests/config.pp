@@ -2,5 +2,16 @@
 #
 # This class is called from pgpool2
 #
-class pgpool2::config {
+class pgpool2::config(
+   $backend_zero_hostname,
+   $backend_one_hostname,
+) {
+
+  file { '/etc/pgpool2/pgpool.conf':
+    ensure  => present,
+    content => template('pgpool2/etc/pgpool2/pgpool.conf.erb'),
+    require => Package['pgpool2'],
+    notify  => Service['pgpool2'],
+  }
+
 }
