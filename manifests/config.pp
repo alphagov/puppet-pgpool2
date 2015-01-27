@@ -5,6 +5,7 @@
 class pgpool2::config(
    $backend_zero_hostname,
    $backend_one_hostname,
+   $load_balance_mode = 'off',
 ) {
 
   file { '/etc/pgpool2/pgpool.conf':
